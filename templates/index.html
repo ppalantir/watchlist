@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>{{ name }}'s Watchlist</title>
-
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
 </head>
@@ -17,14 +16,13 @@
     <p>{{ movies|length  }} Titles</p>
     <u1 class="movie-list">
         {% for movie in movies %} {# 迭代movies变量 #}
-        <li>{{ movie.title}} - {{ movie.year }}}</li>{# 等同于movie['title'] #}
+        <li>{{ movie.title}} - {{ movie.year }}</li>{# 等同于movie['title'] #}
         {% endfor %} {# 使用 endfor标签结束for语句#}
     </u1>
+    <img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
     <footer>
         <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
     </footer>
-
-    <img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
 
 <h1>{{ name }}的个人主页</h1>
 {% if bio %}
