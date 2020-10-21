@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ name }}'s Watchlist</title>
+</head>
+<body>
+    <h2>{{ name }}'s Watchlist</h2>
+    {# 使用length过滤器获取movies变量的长度 #}
+    <p>{{ movies|length  }} Titles</p>
+    <u1>
+        {% for movie in movies %} {# 迭代movies变量 #}
+        <li>{{ movie.title}} - {{ movie.year }}}</li>{# 等同于movie['title'] #}
+        {% endfor %} {# 使用 endfor标签结束for语句#}
+    </u1>
+    <footer>
+        <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
+    </footer>
+
+<h1>{{ name }}的个人主页</h1>
+{% if bio %}
+<p>{{ bio }}</p> {# 这里的缩进只是为了可读性，不是必须的 #}
+{% else %}
+<p>自我介绍为空。</p>
+{% endif %} {# 大部分 Jinja 语句都需要声明关闭 #}
+
+</body>
+</html>
