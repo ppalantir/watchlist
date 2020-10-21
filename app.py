@@ -1,9 +1,11 @@
-from flask import Flask, render_template
-from flask import url_for
+from flask import Flask, url_for, render_template
+from faker import Faker
 
 app = Flask(__name__)
 
-name = 'Yang Xu'
+fake = Faker('ja_JP')
+name = fake.name()
+# name = 'Yang Xu'
 movies = [
 {'title': 'My Neighbor Totoro', 'year': '1988'},
 {'title': 'Dead Poets Society', 'year': '1989'},
